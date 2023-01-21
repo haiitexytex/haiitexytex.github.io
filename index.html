@@ -1,0 +1,46 @@
+<html>
+<body style="background-color:black">
+<div id="container">
+  <script>
+    let numParagraphs = Math.floor(Math.random() * (40 - 5 + 1)) + 16;
+    for (let i = 0; i < numParagraphs; i++) {
+      let p = document.createElement("p");
+      p.innerHTML = "tex";
+      p.style.color = "rgb(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
+      p.style.position = "absolute";
+      p.style.left = Math.random() * 100 + "%";
+      p.style.top = Math.random() * 100 + "%";
+      p.style.fontSize = Math.floor(Math.random() * (60 - 12 + 1) + 12) + "px";
+      document.getElementById("container").appendChild(p);
+    }
+    let numImages = Math.floor(Math.random() * (14 - 3 + 1)) + 9;
+    for (let i = 0; i < numImages; i++) {
+      let img = document.createElement("img");
+      img.src = "haitexo.png";
+	  img.href = "https://cdn.discordapp.com/attachments/796796372040679446/796853808570302534/unknown-4.png"
+      img.style.width = Math.floor(Math.random() * (250 - 50 + 1) + 80) + "px";
+      img.style.position = "absolute";
+      img.style.left = Math.random() * 100 + "%";
+      img.style.top = Math.random() * 100 + "%";
+      document.getElementById("container").appendChild(img);
+    }
+    setInterval(function() {
+        var paragraphs = document.getElementsByTagName("p");
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].style.transform = "rotate(" + 5 * 360 + "deg)";
+        }
+        var images = document.getElementsByTagName("img");
+        for (let i = 0; i < images.length; i++) {
+            images[i].style.transform = "rotate(" +  + "deg)";
+        }
+    }, 100);
+  </script>
+</div>
+<audio id="texbark" src="texbark.mp3"></audio>
+<script>
+  setInterval(function(){
+    document.getElementById("texbark").play();
+  }, 2000);
+</script>
+</body>
+</html>
